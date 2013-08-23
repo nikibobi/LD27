@@ -6,3 +6,6 @@
 *.csproj
 *.unityproj
 *.sln
+
+#Spine unity example folder
+examples/
