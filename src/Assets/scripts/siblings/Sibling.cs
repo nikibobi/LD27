@@ -32,7 +32,21 @@ public abstract class Sibling : MonoBehaviour {
 		throw new NotImplementedException("attack not implemented");
 	}
 	
-	public void Move(Vector2 direction) {
+	public void Move(Vector3 direction) {
 		//move the character in that direction
+		switch(direction) {
+			case Vector3.left:
+				//move left
+				break;
+			case Vector3.right:
+				//move right
+				break;
+			default:
+				throw new NotImplementedException("Can only move left or right. Used:" + direction);
+		}
+	}
+	
+	public void Jump() {
+		//jump the character
 	}
 }
