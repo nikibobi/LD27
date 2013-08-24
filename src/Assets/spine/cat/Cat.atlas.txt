@@ -1,0 +1,138 @@
+
+Cat.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Body
+  rotate: false
+  xy: 2, 819
+  size: 539, 648
+  orig: 539, 648
+  offset: 0, 0
+  index: -1
+Front Right Paw
+  rotate: false
+  xy: 1167, 1053
+  size: 202, 133
+  orig: 202, 133
+  offset: 0, 0
+  index: -1
+FrontLeftPaw
+  rotate: false
+  xy: 543, 832
+  size: 229, 153
+  orig: 229, 153
+  offset: 0, 0
+  index: -1
+FrontLegs
+  rotate: false
+  xy: 543, 987
+  size: 249, 480
+  orig: 249, 480
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 1469
+  size: 722, 563
+  orig: 722, 563
+  offset: 0, 0
+  index: -1
+Left Eye FullyClosed
+  rotate: false
+  xy: 1874, 1638
+  size: 172, 71
+  orig: 184, 184
+  offset: 4, 55
+  index: -1
+Left Eye HalfClosed
+  rotate: false
+  xy: 566, 553
+  size: 180, 94
+  orig: 184, 184
+  offset: 0, 52
+  index: -1
+Left eye
+  rotate: false
+  xy: 385, 294
+  size: 184, 184
+  orig: 184, 184
+  offset: 0, 0
+  index: -1
+left backleg
+  rotate: false
+  xy: 1874, 1711
+  size: 167, 321
+  orig: 167, 321
+  offset: 0, 0
+  index: -1
+left ear
+  rotate: true
+  xy: 2, 2
+  size: 298, 367
+  orig: 298, 367
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: true
+  xy: 371, 75
+  size: 217, 100
+  orig: 217, 100
+  offset: 0, 0
+  index: -1
+right backleg
+  rotate: false
+  xy: 385, 480
+  size: 179, 337
+  orig: 179, 337
+  offset: 0, 0
+  index: -1
+right ear
+  rotate: false
+  xy: 1167, 1188
+  size: 249, 343
+  orig: 249, 343
+  offset: 0, 0
+  index: -1
+right eye
+  rotate: false
+  xy: 566, 649
+  size: 182, 181
+  orig: 182, 181
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 726, 1512
+  size: 394, 520
+  orig: 394, 520
+  offset: 0, 0
+  index: -1
+tail_2
+  rotate: false
+  xy: 2, 302
+  size: 381, 515
+  orig: 394, 520
+  offset: 10, 4
+  index: -1
+tail_3
+  rotate: false
+  xy: 1122, 1533
+  size: 377, 499
+  orig: 394, 520
+  offset: 15, 9
+  index: -1
+tail_4
+  rotate: false
+  xy: 794, 1045
+  size: 371, 465
+  orig: 394, 520
+  offset: 20, 11
+  index: -1
+tail_5
+  rotate: false
+  xy: 1501, 1540
+  size: 371, 492
+  orig: 394, 520
+  offset: 21, 18
+  index: -1
