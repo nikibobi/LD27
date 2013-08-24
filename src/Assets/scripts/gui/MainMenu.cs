@@ -5,8 +5,7 @@ using System.Collections;
 public class MainMenu : MonoBehaviour {
 	public enum MenuState {
 		Main,
-		Credits,
-		Play
+		Credits
 	}
 	
 	public GUISkin Skin;
@@ -25,7 +24,7 @@ public class MainMenu : MonoBehaviour {
 			switch(State) {
 				case MenuState.Main:
 					GUILayout.FlexibleSpace();
-					MenuButton("Play", Color.green, () => State = MenuState.Play);
+					MenuButton("Play", Color.green, () => Application.LoadLevel("Game"));
 					MenuButton("Credits", Color.blue, () => State = MenuState.Credits);
 					MenuButton("Quit", Color.red, Application.Quit);
 					GUILayout.FlexibleSpace();
@@ -34,12 +33,6 @@ public class MainMenu : MonoBehaviour {
 					GUILayout.FlexibleSpace();
 					MenuButton("Borislav Kosharov", Color.yellow);
 					MenuButton("Viktor Danev", Color.cyan);
-					MenuButton("Back", Color.magenta, () => State = MenuState.Main);
-					GUILayout.FlexibleSpace();
-					break;
-				case MenuState.Play:
-					GUILayout.FlexibleSpace();
-					MenuButton("Random", Color.green, () => Application.LoadLevel("Game"));
 					MenuButton("Back", Color.magenta, () => State = MenuState.Main);
 					GUILayout.FlexibleSpace();
 					break;
