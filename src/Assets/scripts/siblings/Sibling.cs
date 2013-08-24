@@ -33,17 +33,10 @@ public abstract class Sibling : MonoBehaviour {
 	}
 	
 	public void Move(Vector3 direction) {
+		//check if direction is left or right
+		if(direction != Vector3.left && direction != Vector3.right)
+			throw new NotImplementedException("Can only move left or right. Used:" + direction);
 		//move the character in that direction
-		switch(direction) {
-			case Vector3.left:
-				//move left
-				break;
-			case Vector3.right:
-				//move right
-				break;
-			default:
-				throw new NotImplementedException("Can only move left or right. Used:" + direction);
-		}
 	}
 	
 	public void Jump() {
