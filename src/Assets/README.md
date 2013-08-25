@@ -3,6 +3,9 @@ TODO
 
 Art
 ---
+###GUI
+* 10 second timer
+
 ###Weapons
 * Sword
 * Mace
