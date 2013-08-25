@@ -22,19 +22,27 @@ public abstract class Sibling : Character {
 	
 	protected override void Update() {
 		base.Update();
+		//Debug.Log(string.Format("[{0}] State = {1}", Game.Seconds, State));
 		switch(State) {
 			case MoveState.None:
-				Idle();
+				//do nothing
 				break;
 			case MoveState.Recording:
-				var key = new Key(Idle);
-				if(Input.GetKey(Settings.Keymap.Walk))
+				var key = new Key();
+				if(Input.GetKeyDown(Settings.Keymap.Walk))
 					key.Action = Walk;
-				if(Input.GetKey(Settings.Keymap.Jump))
+				if(Input.GetKeyUp(Settings.Keymap.Walk))
+					key.Action = Idle;
+				if(Input.GetKeyDown(Settings.Keymap.Jump))
 					key.Action = Jump;
-				if(Input.GetKey(Settings.Keymap.UseAbility))
+				if(Input.GetKeyDown(Settings.Keymap.UseAbility))
 					key.Action = UseAbility;
-				Moves.Enqueue(key);
+				
+				if(key.Action != null)
+				{
+					key.Action();
+					Moves.Enqueue(key);
+				}
 				break;
 			case MoveState.Playing:
 				while(Moves.Peek().Time >= Game.Seconds)
