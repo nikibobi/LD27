@@ -34,25 +34,34 @@ public abstract class Character : MonoBehaviour {
 		SkeletonAnimation = GetComponent<SkeletonAnimation>();
 	}
 	
+	public void Restart() {
+		Moves.Clear();
+	}
+	
 	protected virtual void Update() {
 		SkeletonAnimation.Update();
 	}
 	
 	public void Idle() {
 		//stay in one place
+		SkeletonAnimation.state.AddAnimation("idle", true);
 	}
 	
 	public void Walk() {
 		//moves foreward
-		SkeletonAnimation.state.SetAnimation("walk", true);
+		SkeletonAnimation.state.ClearAnimation();
+		SkeletonAnimation.state.AddAnimation("walk", true);
 	}
 	
 	public void Jump() {
 		//jump up
-		SkeletonAnimation.state.SetAnimation("jump", false);
+		SkeletonAnimation.state.ClearAnimation();
+		SkeletonAnimation.state.AddAnimation("jump", false);
 	}
 	
 	public void Attack() {
 		//attack in front of me
+		SkeletonAnimation.state.ClearAnimation();
+		SkeletonAnimation.state.SetAnimation("attack-" + Weapon.ToString().ToLower(), false);
 	}
 }

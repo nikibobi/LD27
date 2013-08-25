@@ -3,38 +3,60 @@ using System;
 using System.Collections;
 using Spine;
 
-public abstract class Sibling : Character {
+public class Sibling : Character {
 	
 	public enum MoveState {
-		None,
+		NotSelected,
 		Recording,
 		Playing
 	}
 	
-	public MoveState State { get; set; }
+	private MoveState state;
+	
+	public MoveState State { 
+		get {
+			return state;
+		}
+		set {
+			state = value;
+			SkeletonAnimation.state.ClearAnimation();
+			switch(state) {
+				case MoveState.NotSelected:
+				case MoveState.Playing:
+					SkeletonAnimation.state.SetAnimation("not-selected", false);
+					break;
+				case MoveState.Recording:
+					SkeletonAnimation.state.SetAnimation("selected", false);					
+					break;
+			}
+		}
+	}
 	public bool Ability { get; set; }
 	
 	protected override void Start() {
 		base.Start();
-		State = MoveState.None;
+		State = MoveState.NotSelected;
 		Ability = true;
 	}
 	
 	protected override void Update() {
 		base.Update();
-		//Debug.Log(string.Format("[{0}] State = {1}", Game.Seconds, State));
 		switch(State) {
-			case MoveState.None:
-				//do nothing
+			case MoveState.NotSelected:
 				break;
 			case MoveState.Recording:
 				var key = new Key();
+				if(Input.GetKeyUp(Settings.Keymap.Walk) || 
+				   Input.GetKeyUp(Settings.Keymap.Jump) ||
+				   Input.GetKeyUp(Settings.Keymap.Attack) ||
+				   Input.GetKeyUp(Settings.Keymap.UseAbility))
+					key.Action = Idle;
 				if(Input.GetKeyDown(Settings.Keymap.Walk))
 					key.Action = Walk;
-				if(Input.GetKeyUp(Settings.Keymap.Walk))
-					key.Action = Idle;
 				if(Input.GetKeyDown(Settings.Keymap.Jump))
 					key.Action = Jump;
+				if(Input.GetKeyDown(Settings.Keymap.Attack))
+					key.Action = Attack;
 				if(Input.GetKeyDown(Settings.Keymap.UseAbility))
 					key.Action = UseAbility;
 				
@@ -45,7 +67,7 @@ public abstract class Sibling : Character {
 				}
 				break;
 			case MoveState.Playing:
-				while(Moves.Peek().Time >= Game.Seconds)
+				while(Moves.Count > 0 && Moves.Peek().Time >= Game.Seconds)
 					Moves.Dequeue().Action();
 				break;
 			default:
@@ -56,8 +78,6 @@ public abstract class Sibling : Character {
 	public void UseAbility() {
 		if(!Ability)
 			return;
-		MyAbility();
+		Debug.Log(SkeletonAnimation.initialSkinName + "'s ability");
 	}
-	
-	protected abstract void MyAbility();
 }

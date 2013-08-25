@@ -10,4 +10,12 @@ public static class Settings {
 		public static readonly KeyCode LastSibling = KeyCode.Q;
 		public static readonly KeyCode NextSibling = KeyCode.E;
 	}
+	public static class Palete {
+		public static readonly Color Blue = Color.blue;
+		public static readonly Color Cyan = Color.cyan;
+		public static readonly Color Yellow = Color.yellow;
+		public static readonly Color Green = Color.green;
+		public static readonly Color Red = Color.red;
+		public static readonly Color Magenta = Color.magenta;
+	}
 }
