@@ -1,152 +1,145 @@
 
-spineboy.png
+Character.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-SpineBoy/head
-  rotate: true
-  xy: 2, 2
-  size: 121, 132
-  orig: 121, 132
-  offset: 0, 0
-  index: -1
 eyes
   rotate: true
-  xy: 362, 66
+  xy: 244, 22
   size: 33, 10
   orig: 33, 10
   offset: 0, 0
   index: -1
 head
   rotate: false
-  xy: 136, 36
+  xy: 2, 39
   size: 75, 87
   orig: 75, 87
   offset: 0, 0
   index: -1
 left-arm
   rotate: true
-  xy: 304, 69
+  xy: 174, 72
   size: 27, 24
   orig: 27, 24
   offset: 0, 0
   index: -1
 left-shoulder
   rotate: true
-  xy: 304, 69
+  xy: 174, 72
   size: 27, 24
   orig: 27, 24
   offset: 0, 0
   index: -1
 left-foot
-  rotate: false
-  xy: 330, 71
+  rotate: true
+  xy: 169, 40
   size: 30, 28
   orig: 30, 28
   offset: 0, 0
   index: -1
 left-hand
   rotate: false
-  xy: 398, 73
+  xy: 98, 16
   size: 23, 23
   orig: 23, 23
   offset: 0, 0
   index: -1
 left-lower-leg
   rotate: true
-  xy: 466, 105
+  xy: 200, 57
   size: 18, 43
   orig: 18, 43
   offset: 0, 0
   index: -1
 left-upper-leg
   rotate: true
-  xy: 136, 6
+  xy: 2, 9
   size: 28, 70
   orig: 28, 70
   offset: 0, 0
   index: -1
 lower-torso
   rotate: false
-  xy: 263, 33
+  xy: 129, 36
   size: 38, 34
   orig: 38, 34
   offset: 0, 0
   index: -1
 lowest-torso
   rotate: false
-  xy: 378, 98
+  xy: 200, 77
   size: 41, 25
   orig: 41, 25
   offset: 0, 0
   index: -1
 mouth
   rotate: true
-  xy: 356, 46
+  xy: 231, 2
   size: 18, 15
   orig: 18, 15
   offset: 0, 0
   index: -1
 neck
-  rotate: false
-  xy: 332, 41
+  rotate: true
+  xy: 169, 16
   size: 22, 28
   orig: 22, 28
   offset: 0, 0
   index: -1
 pelvis
   rotate: false
-  xy: 261, 69
+  xy: 131, 72
   size: 41, 27
   orig: 41, 27
   offset: 0, 0
   index: -1
 right-arm
   rotate: true
-  xy: 330, 101
+  xy: 200, 104
   size: 22, 46
   orig: 22, 46
   offset: 0, 0
   index: -1
 right-foot
-  rotate: false
-  xy: 303, 37
+  rotate: true
+  xy: 199, 7
   size: 27, 30
   orig: 27, 30
   offset: 0, 0
   index: -1
 right-hand
   rotate: false
-  xy: 374, 69
+  xy: 74, 10
   size: 22, 27
   orig: 22, 27
   offset: 0, 0
   index: -1
 right-lower-leg
   rotate: true
-  xy: 421, 104
+  xy: 199, 36
   size: 19, 43
   orig: 19, 43
   offset: 0, 0
   index: -1
 right-shoulder
   rotate: true
-  xy: 213, 38
+  xy: 79, 41
   size: 29, 48
   orig: 29, 48
   offset: 0, 0
   index: -1
 right-upper-leg
   rotate: true
-  xy: 261, 98
+  xy: 131, 101
   size: 25, 67
   orig: 25, 67
   offset: 0, 0
   index: -1
 torso
   rotate: false
-  xy: 213, 69
-  size: 46, 54
-  orig: 46, 54
+  xy: 79, 72
+  size: 50, 54
+  orig: 50, 54
   offset: 0, 0
   index: -1
