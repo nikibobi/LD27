@@ -1,8 +1,20 @@
 TODO
 ====
 
+Spine
+-----
+###Animations
+* Attack sharp
+* Attack blunt
+* Attack long
+* Special attack
+
 Art
 ---
+###Envoirment
+* Ground
+* Background
+
 ###GUI
 * 10 second timer
 
@@ -14,8 +26,8 @@ Art
 ###Skins
 
 ####Siblings
-* Bobi
-* Simon
+* Bobi ✔
+* Simon ✔
 * Viktor
 * Sasho
 * Verka
