@@ -30,8 +30,8 @@ public class MainMenu : MonoBehaviour {
 					break;
 				case MenuState.Credits:
 					GUILayout.FlexibleSpace();
-					MenuButton("Borislav Kosharov", Settings.Palete.Yellow, () => Application.OpenURL("https://github.com/nikibobi"));
-					MenuButton("Viktor Danev", Settings.Palete.Magenta, () => Application.OpenURL("https://github.com/Metaknigth"));
+					MenuButton("Borislav Kosharov", Settings.Palete.Yellow, () => Application.OpenURL("http://bosakkoshi.tumblr.com/"));
+					MenuButton("Viktor Danev", Settings.Palete.Magenta, () => Application.OpenURL("http://metaknigth.tumblr.com/"));
 					MenuButton("Nikolai Kosharov", Settings.Palete.Cyan, () => Application.OpenURL("http://medik3.tumblr.com/"));
 					MenuButton("Back", Settings.Palete.Red, () => State = MenuState.Main);
 					break;
