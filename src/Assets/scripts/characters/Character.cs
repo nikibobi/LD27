@@ -36,7 +36,6 @@ public abstract class Character : MonoBehaviour {
 		}
 		set {
 			weapon = value;
-			
 			//SkeletonAnimation.skeleton.SetAttachment("weapon", weapon.ToString().ToLower());
 		}
 	}
@@ -72,6 +71,7 @@ public abstract class Character : MonoBehaviour {
 	
 	public void Idle() {
 		//stay in one place
+		SkeletonAnimation.skeleton.SetBonesToSetupPose();
 		if(SkeletonAnimation.state.Animation.Name == "walk")
 			SkeletonAnimation.state.SetAnimation("idle", true);
 		else
@@ -80,13 +80,13 @@ public abstract class Character : MonoBehaviour {
 	
 	public void Walk() {
 		//moves foreward
-		SkeletonAnimation.skeleton.SetToSetupPose();
+		SkeletonAnimation.skeleton.SetBonesToSetupPose();
 		SkeletonAnimation.state.SetAnimation("walk", true);
 	}
 	
 	public void Attack() {
 		//attack in front of me
-		SkeletonAnimation.skeleton.SetToSetupPose();
+		SkeletonAnimation.skeleton.SetBonesToSetupPose();
 		SkeletonAnimation.state.SetAnimation("attack-" + Weapon.ToString().ToLower(), false);
 	}
 }

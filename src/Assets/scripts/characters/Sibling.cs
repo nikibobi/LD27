@@ -14,13 +14,17 @@ public class Sibling : Character {
 	private bool started;
 	private MoveState state;
 	
+	public string SkinName {
+		get {
+			return SkeletonAnimation.initialSkinName;	
+		}
+	}
 	public MoveState State { 
 		get {
 			return state;
 		}
 		set {
 			state = value;
-			SkeletonAnimation.skeleton.SetToSetupPose();
 			switch(state) {
 				case MoveState.NotSelected:
 				case MoveState.Playing:
@@ -39,6 +43,7 @@ public class Sibling : Character {
 		}
 		set {
 			Tfm.position = new Vector3(Tfm.position.x, value?0:10, value?0:1);
+			SkeletonAnimation.skeleton.SetBonesToSetupPose();
 			SkeletonAnimation.state.SetAnimation((value?"":"not-") + "selected", false);
 		}
 	}
@@ -105,6 +110,8 @@ public class Sibling : Character {
 	public void UseAbility() {
 		if(!Ability)
 			return;
-		Debug.Log(SkeletonAnimation.initialSkinName + "'s ability");
+		SkeletonAnimation.skeleton.SetBonesToSetupPose();
+		SkeletonAnimation.state.SetAnimation("special-" + SkinName, false);
+		Ability = false;
 	}
 }
