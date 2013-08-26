@@ -38,6 +38,14 @@ public abstract class Character : MonoBehaviour {
 			weapon = value;
 		}
 	}
+	public float Direction {
+		get {
+			return Mathf.Sign(Tfm.localScale.x);
+		}
+		set {
+			Tfm.localScale = new Vector3(Mathf.Sign(value) * Tfm.localScale.x, Tfm.localScale.y, Tfm.localScale.z);
+		}
+	}
 	protected Queue<Key> Moves { get; private set; }
 	protected SkeletonAnimation SkeletonAnimation { get; private set; }
 	protected Transform Tfm { get; private set; }
@@ -56,7 +64,7 @@ public abstract class Character : MonoBehaviour {
 	
 	protected virtual void Update() {
 		if(SkeletonAnimation.state.Animation.Name == "walk") {
-			Tfm.position += new Vector3(Mathf.Sign(Tfm.localScale.x) * Speed * Time.deltaTime , 0, 0);	
+			Tfm.position += new Vector3(Direction * Speed * Time.deltaTime , 0, 0);	
 		}
 	}
 	
