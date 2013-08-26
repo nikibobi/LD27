@@ -6,6 +6,7 @@ public class Game : MonoBehaviour {
 	public GameObject[] SiblingPrefabs;
 	
 	private Transform cameraTransform;
+	private Vector3 cameraOffset;
 	private LinkedList<Sibling> siblings;
 	private LinkedListNode<Sibling> current;
 	
@@ -25,6 +26,7 @@ public class Game : MonoBehaviour {
 
 	void Start() {
 		cameraTransform = transform;
+		cameraOffset = cameraTransform.position;
 		Restart();
 	}
 	
@@ -45,6 +47,6 @@ public class Game : MonoBehaviour {
 			Current = Current.NextOrFirst();
 		if(Input.GetKeyDown(Settings.Keymap.LastSibling))
 			Current = Current.PreviousOrLast();
-		cameraTransform.position = Current.Value.transform.position + new Vector3(450, 450, -1);
+		cameraTransform.position = Current.Value.transform.position + cameraOffset;
 	}
 }

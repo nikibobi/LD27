@@ -25,6 +25,8 @@ public abstract class Character : MonoBehaviour {
 		}
 	}
 	
+	public float Speed;
+	
 	public WeaponType Weapon { get; set; }
 	protected Queue<Key> Moves { get; private set; }
 	protected SkeletonAnimation SkeletonAnimation { get; private set; }
@@ -39,7 +41,9 @@ public abstract class Character : MonoBehaviour {
 	}
 	
 	protected virtual void Update() {
-		SkeletonAnimation.Update();
+		if(SkeletonAnimation.state.Animation.Name == "walk") {
+			transform.position += new Vector3(Mathf.Sign(transform.localScale.x) * Speed * Time.deltaTime , 0, 0);	
+		}
 	}
 	
 	public void Idle() {
