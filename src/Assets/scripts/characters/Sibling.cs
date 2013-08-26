@@ -55,6 +55,7 @@ public class Sibling : Character {
 	{
 		base.Restart();
 		State = MoveState.Recording;
+		Direction = 1;
 		Ability = true;
 		Seconds = 0;
 	}
@@ -93,7 +94,7 @@ public class Sibling : Character {
 				
 				break;
 			case MoveState.Playing:
-				if(Moves.Count > 0 && Moves.Peek().Time >= Game.Seconds)
+				if(Moves.Count > 0 && Moves.Peek().Time <= Game.Seconds)
 					Moves.Dequeue().Action();
 				break;
 			default:
