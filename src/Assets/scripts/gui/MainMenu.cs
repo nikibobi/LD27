@@ -24,16 +24,16 @@ public class MainMenu : MonoBehaviour {
 			switch(State) {
 				case MenuState.Main:
 					GUILayout.FlexibleSpace();
-					MenuButton("Play", Color.green, () => Application.LoadLevel("Game"));
-					MenuButton("Credits", Color.blue, () => State = MenuState.Credits);
-					MenuButton("Quit", Color.red, Application.Quit);
+					MenuButton("Play", Settings.Palete.Green, () => Application.LoadLevel("Game"));
+					MenuButton("Credits", Settings.Palete.Blue, () => State = MenuState.Credits);
+					MenuButton("Quit", Settings.Palete.Red, Application.Quit);
 					GUILayout.FlexibleSpace();
 					break;
 				case MenuState.Credits:
 					GUILayout.FlexibleSpace();
-					MenuButton("Borislav Kosharov", Color.yellow);
-					MenuButton("Viktor Danev", Color.cyan);
-					MenuButton("Back", Color.magenta, () => State = MenuState.Main);
+					MenuButton("Borislav Kosharov", Settings.Palete.Yellow, () => Application.OpenURL("https://github.com/nikibobi"));
+					MenuButton("Viktor Danev", Settings.Palete.Cyan, () => Application.OpenURL("https://github.com/Metaknigth"));
+					MenuButton("Back", Settings.Palete.Magenta, () => State = MenuState.Main);
 					GUILayout.FlexibleSpace();
 					break;
 			}
