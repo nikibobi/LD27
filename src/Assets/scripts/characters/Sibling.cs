@@ -35,10 +35,10 @@ public class Sibling : Character {
 	}
 	public bool Selected {
 		get {
-			return transform.position.z == 0;
+			return Tfm.position.z == 0;
 		}
 		set {
-			transform.position = new Vector3(transform.position.x, value?0:10, value?0:1);
+			Tfm.position = new Vector3(Tfm.position.x, value?0:10, value?0:1);
 			SkeletonAnimation.state.SetAnimation((value?"":"not-") + "selected", false);
 		}
 	}
@@ -48,12 +48,13 @@ public class Sibling : Character {
 	protected override void Start() {
 		base.Start();
 		Restart();
+		State = MoveState.NotSelected;
 	}
 	
 	public override void Restart()
 	{
 		base.Restart();
-		State = MoveState.NotSelected;
+		State = MoveState.Recording;
 		Ability = true;
 		Seconds = 0;
 	}

@@ -27,6 +27,7 @@ public abstract class Character : MonoBehaviour {
 	
 	public float Speed;
 	
+	private Vector3 initialPosition;
 	private WeaponType weapon;
 	
 	public WeaponType Weapon {
@@ -39,19 +40,23 @@ public abstract class Character : MonoBehaviour {
 	}
 	protected Queue<Key> Moves { get; private set; }
 	protected SkeletonAnimation SkeletonAnimation { get; private set; }
+	protected Transform Tfm { get; private set; }
 	
 	protected virtual void Start() {
 		Moves = new Queue<Key>();
 		SkeletonAnimation = GetComponent<SkeletonAnimation>();
+		Tfm = transform;
+		initialPosition = Tfm.position;
 	}
 	
 	public virtual void Restart() {
 		Moves.Clear();
+		Tfm.position = initialPosition;
 	}
 	
 	protected virtual void Update() {
 		if(SkeletonAnimation.state.Animation.Name == "walk") {
-			transform.position += new Vector3(Mathf.Sign(transform.localScale.x) * Speed * Time.deltaTime , 0, 0);	
+			Tfm.position += new Vector3(Mathf.Sign(Tfm.localScale.x) * Speed * Time.deltaTime , 0, 0);	
 		}
 	}
 	
@@ -72,6 +77,7 @@ public abstract class Character : MonoBehaviour {
 	public void Attack() {
 		//attack in front of me
 		SkeletonAnimation.state.ClearAnimation();
-		SkeletonAnimation.state.AddAnimation("attack-" + Weapon.ToString().ToLower(), false);
+		SkeletonAnimation.state.SetAnimation("idle", false);
+		SkeletonAnimation.state.SetAnimation("attack-" + Weapon.ToString().ToLower(), false);
 	}
 }
