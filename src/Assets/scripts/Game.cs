@@ -20,7 +20,7 @@ public class Game : MonoBehaviour {
 		}
 		set {
 			if(current != null) {
-				current.Value.State = Sibling.MoveState.Playing;
+				current.Value.State = Sibling.MoveState.Paused;
 			}
 			current = value;
 			current.Value.State = Sibling.MoveState.Recording;

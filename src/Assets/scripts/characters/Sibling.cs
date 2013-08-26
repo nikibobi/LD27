@@ -6,7 +6,7 @@ using Spine;
 public class Sibling : Character {
 	
 	public enum MoveState {
-		NotSelected,
+		Paused,
 		Recording,
 		Playing
 	}
@@ -25,16 +25,8 @@ public class Sibling : Character {
 		}
 		set {
 			state = value;
-			switch(state) {
-				case MoveState.NotSelected:
-				case MoveState.Playing:
-					Selected = false;
-					break;
-				case MoveState.Recording:
-					started = false;
-					Selected = true;		
-					break;
-			}
+			started = false;
+			Selected = state != MoveState.Paused;
 		}
 	}
 	public bool Selected {
@@ -43,7 +35,6 @@ public class Sibling : Character {
 		}
 		set {
 			Tfm.position = new Vector3(Tfm.position.x, value?0:10, value?0:1);
-			SkeletonAnimation.skeleton.SetBonesToSetupPose();
 			SkeletonAnimation.state.SetAnimation((value?"":"not-") + "selected", false);
 		}
 	}
@@ -53,7 +44,7 @@ public class Sibling : Character {
 	protected override void Start() {
 		base.Start();
 		Restart();
-		State = MoveState.NotSelected;
+		State = MoveState.Paused;
 	}
 	
 	public override void Restart()
@@ -68,11 +59,15 @@ public class Sibling : Character {
 	protected override void Update() {
 		base.Update();
 		switch(State) {
-			case MoveState.NotSelected:
+			case MoveState.Paused:
+				Idle();
 				break;
 			case MoveState.Recording:
-				if(started)
+				if(started) {
 					Seconds += Time.deltaTime;
+				} else {
+					Idle();
+				}
 			
 				var key = new Key();
 				if(Input.GetKeyUp(Settings.Keymap.Walk) || 
@@ -95,8 +90,6 @@ public class Sibling : Character {
 					key.Action();
 					Moves.Enqueue(key);
 				}
-			
-				
 				break;
 			case MoveState.Playing:
 				if(Moves.Count > 0 && Moves.Peek().Time <= Game.Seconds)
@@ -113,5 +106,6 @@ public class Sibling : Character {
 		SkeletonAnimation.skeleton.SetBonesToSetupPose();
 		SkeletonAnimation.state.SetAnimation("special-" + SkinName, false);
 		Ability = false;
+		Walking = false;
 	}
 }
