@@ -27,7 +27,16 @@ public abstract class Character : MonoBehaviour {
 	
 	public float Speed;
 	
-	public WeaponType Weapon { get; set; }
+	private WeaponType weapon;
+	
+	public WeaponType Weapon {
+		get {
+			return weapon;
+		}
+		set {
+			weapon = value;
+		}
+	}
 	protected Queue<Key> Moves { get; private set; }
 	protected SkeletonAnimation SkeletonAnimation { get; private set; }
 	
