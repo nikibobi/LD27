@@ -4,9 +4,9 @@ TODO
 Spine
 -----
 ###Animations
-* Attack sharp
-* Attack blunt
-* Attack long
+* Attack sharp ✔
+* Attack blunt ✔
+* Attack long ✔
 * Special attack
 
 Art
@@ -19,9 +19,9 @@ Art
 * 10 second timer
 
 ###Weapons
-* Sword
-* Mace
-* Spear
+* Sword ✔
+* Mace ✔
+* Spear ✔
 
 ###Skins
 
@@ -38,4 +38,4 @@ Art
 * Bratoev
 
 ####Enemies
-* Huni
+* Huni ✔
