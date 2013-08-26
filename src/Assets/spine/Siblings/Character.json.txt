@@ -31,7 +31,7 @@
 	{ "name": "right hand", "parent": "right arm", "length": 15.32, "x": 39.87, "y": 0.01, "rotation": 9.37 }
 ],
 "slots": [
-	{ "name": "weapon", "bone": "left hand", "attachment": "long" },
+	{ "name": "weapon", "bone": "left hand" },
 	{ "name": "left shoulder", "bone": "left shoulder", "attachment": "left shoulder" },
 	{ "name": "left arm", "bone": "left arm", "attachment": "left ARM" },
 	{ "name": "left hand", "bone": "left hand", "attachment": "left HAND" },
@@ -124,7 +124,7 @@
 	},
 	"Huni": {
 		"eyes": {
-			"Eyes": { "name": "Huni/eyes", "x": 25.59, "y": -5.62, "rotation": -65.86, "width": 36, "height": 17 }
+			"Eyes": { "name": "Huni/eyes", "x": 31.35, "y": -1.81, "rotation": -65.86, "width": 36, "height": 17 }
 		},
 		"head": {
 			"Head": { "name": "Huni/head", "x": 26.07, "y": 10.4, "rotation": -65.86, "width": 75, "height": 87 }
@@ -154,7 +154,7 @@
 			"Middle-torso": { "name": "Huni/lower-torso", "x": 2.75, "y": 2.59, "rotation": -90.45, "width": 42, "height": 34 }
 		},
 		"mouth": {
-			"mouth skin": { "name": "Huni/mouth", "x": 6.29, "y": -17.37, "rotation": -65.86, "width": 21, "height": 9 }
+			"mouth skin": { "name": "Huni/mouth", "x": 7.41, "y": -19.88, "scaleX": 0.847, "scaleY": 0.769, "rotation": -65.86, "width": 21, "height": 9 }
 		},
 		"neck": {
 			"Neck": { "name": "Huni/neck", "x": 7.54, "y": 1.76, "rotation": -80.75, "width": 22, "height": 28 }
@@ -448,6 +448,135 @@
 					{ "time": 0, "x": 0, "y": 0 },
 					{ "time": 0.4333, "x": -1.84, "y": -0.3 },
 					{ "time": 0.8666, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"idle-blunt": {
+		"bones": {
+			"left shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 305.82 }
+				]
+			},
+			"right shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 28.49 }
+				]
+			},
+			"left arm": {
+				"rotate": [
+					{ "time": 0, "angle": 14.84 }
+				]
+			},
+			"right arm": {
+				"rotate": [
+					{ "time": 0, "angle": -16.42 }
+				]
+			},
+			"left hand": {
+				"rotate": [
+					{ "time": 0, "angle": -31.9 }
+				]
+			},
+			"head": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.4333, "x": -1.84, "y": -0.3 },
+					{ "time": 0.8666, "x": 0, "y": 0 }
+				]
+			}
+		},
+		"slots": {
+			"weapon": {
+				"attachment": [
+					{ "time": 0, "name": "blunt" }
+				]
+			}
+		}
+	},
+	"idle-long": {
+		"bones": {
+			"left shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 305.82 }
+				]
+			},
+			"right shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 28.49 }
+				]
+			},
+			"left arm": {
+				"rotate": [
+					{ "time": 0, "angle": 14.84 }
+				]
+			},
+			"right arm": {
+				"rotate": [
+					{ "time": 0, "angle": -16.42 }
+				]
+			},
+			"left hand": {
+				"rotate": [
+					{ "time": 0, "angle": -31.9 }
+				]
+			},
+			"head": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.4333, "x": -1.84, "y": -0.3 },
+					{ "time": 0.8666, "x": 0, "y": 0 }
+				]
+			}
+		},
+		"slots": {
+			"weapon": {
+				"attachment": [
+					{ "time": 0, "name": "long" }
+				]
+			}
+		}
+	},
+	"idle-sharp": {
+		"bones": {
+			"left shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 305.82 }
+				]
+			},
+			"right shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 28.49 }
+				]
+			},
+			"left arm": {
+				"rotate": [
+					{ "time": 0, "angle": 14.84 }
+				]
+			},
+			"right arm": {
+				"rotate": [
+					{ "time": 0, "angle": -16.42 }
+				]
+			},
+			"left hand": {
+				"rotate": [
+					{ "time": 0, "angle": -31.9 }
+				]
+			},
+			"head": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.4333, "x": -1.84, "y": -0.3 },
+					{ "time": 0.8666, "x": 0, "y": 0 }
+				]
+			}
+		},
+		"slots": {
+			"weapon": {
+				"attachment": [
+					{ "time": 0, "name": "sharp" }
 				]
 			}
 		}
