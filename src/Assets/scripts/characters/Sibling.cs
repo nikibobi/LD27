@@ -23,15 +23,24 @@ public class Sibling : Character {
 			switch(state) {
 				case MoveState.NotSelected:
 				case MoveState.Playing:
-					SkeletonAnimation.state.SetAnimation("not-selected", false);
+					Selected = false;
 					break;
 				case MoveState.Recording:
-					SkeletonAnimation.state.SetAnimation("selected", false);					
+					Selected = true;		
 					break;
 			}
 		}
 	}
 	public bool Ability { get; set; }
+	public bool Selected {
+		get {
+			return transform.position.z == 0;
+		}
+		set {
+			transform.position = new Vector3(transform.position.x, value?0:10, value?0:1);
+			SkeletonAnimation.state.SetAnimation((value?"":"not-") + "selected", false);
+		}
+	}
 	
 	protected override void Start() {
 		base.Start();
@@ -47,14 +56,11 @@ public class Sibling : Character {
 			case MoveState.Recording:
 				var key = new Key();
 				if(Input.GetKeyUp(Settings.Keymap.Walk) || 
-				   Input.GetKeyUp(Settings.Keymap.Jump) ||
 				   Input.GetKeyUp(Settings.Keymap.Attack) ||
 				   Input.GetKeyUp(Settings.Keymap.UseAbility))
 					key.Action = Idle;
 				if(Input.GetKeyDown(Settings.Keymap.Walk))
 					key.Action = Walk;
-				if(Input.GetKeyDown(Settings.Keymap.Jump))
-					key.Action = Jump;
 				if(Input.GetKeyDown(Settings.Keymap.Attack))
 					key.Action = Attack;
 				if(Input.GetKeyDown(Settings.Keymap.UseAbility))

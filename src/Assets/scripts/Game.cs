@@ -15,8 +15,9 @@ public class Game : MonoBehaviour {
 			return current;
 		}
 		set {
-			if(current != null)
+			if(current != null) {
 				current.Value.State = Sibling.MoveState.Playing;
+			}
 			current = value;
 			current.Value.State = Sibling.MoveState.Recording;
 		}
@@ -47,6 +48,6 @@ public class Game : MonoBehaviour {
 			Current = Current.NextOrFirst();
 		if(Input.GetKeyDown(Settings.Keymap.LastSibling))
 			Current = Current.PreviousOrLast();
-		cameraTransform.position = Current.Value.transform.position + cameraOffset;
+		cameraTransform.position = new Vector3(Current.Value.transform.position.x, Current.Value.transform.position.y)  + cameraOffset;
 	}
 }

@@ -48,7 +48,10 @@ public abstract class Character : MonoBehaviour {
 	
 	public void Idle() {
 		//stay in one place
-		SkeletonAnimation.state.AddAnimation("idle", true);
+		if(SkeletonAnimation.state.Animation.Name == "walk")
+			SkeletonAnimation.state.SetAnimation("idle", true);
+		else
+			SkeletonAnimation.state.AddAnimation("idle", true);
 	}
 	
 	public void Walk() {
@@ -57,15 +60,9 @@ public abstract class Character : MonoBehaviour {
 		SkeletonAnimation.state.AddAnimation("walk", true);
 	}
 	
-	public void Jump() {
-		//jump up
-		SkeletonAnimation.state.ClearAnimation();
-		SkeletonAnimation.state.AddAnimation("jump", false);
-	}
-	
 	public void Attack() {
 		//attack in front of me
 		SkeletonAnimation.state.ClearAnimation();
-		SkeletonAnimation.state.SetAnimation("attack-" + Weapon.ToString().ToLower(), false);
+		SkeletonAnimation.state.AddAnimation("attack-" + Weapon.ToString().ToLower(), false);
 	}
 }
