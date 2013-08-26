@@ -36,7 +36,6 @@ public abstract class Character : MonoBehaviour {
 		}
 		set {
 			weapon = value;
-			//SkeletonAnimation.skeleton.SetAttachment("weapon", weapon.ToString().ToLower());
 		}
 	}
 	public float Direction {
@@ -70,12 +69,13 @@ public abstract class Character : MonoBehaviour {
 	}
 	
 	public void Idle() {
+		
 		//stay in one place
 		SkeletonAnimation.skeleton.SetBonesToSetupPose();
 		if(SkeletonAnimation.state.Animation.Name == "walk")
-			SkeletonAnimation.state.SetAnimation("idle", true);
+			SkeletonAnimation.state.SetAnimation(WeaponPostfix("idle"), true);
 		else
-			SkeletonAnimation.state.AddAnimation("idle", true);
+			SkeletonAnimation.state.AddAnimation(WeaponPostfix("idle"), true);
 	}
 	
 	public void Walk() {
@@ -87,6 +87,10 @@ public abstract class Character : MonoBehaviour {
 	public void Attack() {
 		//attack in front of me
 		SkeletonAnimation.skeleton.SetBonesToSetupPose();
-		SkeletonAnimation.state.SetAnimation("attack-" + Weapon.ToString().ToLower(), false);
+		SkeletonAnimation.state.SetAnimation(WeaponPostfix("attack"), false);
+	}
+	
+	protected string WeaponPostfix(string str) {
+		return 	str + "-" + Weapon.ToString().ToLower();
 	}
 }
