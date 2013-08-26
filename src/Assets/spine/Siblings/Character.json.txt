@@ -52,7 +52,8 @@
 	{ "name": "right shoulder", "bone": "right shoulder", "attachment": "right SHOULDER" },
 	{ "name": "right arm", "bone": "right arm", "attachment": "right ARM" },
 	{ "name": "right hand", "bone": "right hand", "attachment": "right HAND" },
-	{ "name": "template", "bone": "root", "color": "ff898c86" }
+	{ "name": "template", "bone": "root", "color": "ff898c86" },
+	{ "name": "hat", "bone": "head", "attachment": "hat" }
 ],
 "skins": {
 	"default": {
@@ -129,61 +130,82 @@
 	},
 	"Huni": {
 		"eyes": {
-			"Eyes": { "name": "Huni/eyes", "x": 31.35, "y": -1.81, "rotation": -65.86, "width": 36, "height": 17 }
+			"Eyes": { "name": "Huni/eyes", "x": 35.6, "y": 0.08, "rotation": -65.86, "width": 36, "height": 17 }
+		},
+		"hat": {
+			"hat": { "name": "Huni/Hat", "x": 32.68, "y": 15.5, "rotation": -65.86, "width": 75, "height": 100 }
 		},
 		"head": {
-			"Head": { "name": "Huni/head", "x": 26.07, "y": 10.4, "rotation": -65.86, "width": 75, "height": 87 }
+			"Head": { "name": "Huni/head", "x": 26.07, "y": 10.4, "rotation": -65.86, "width": 75, "height": 96 }
 		},
 		"left arm": {
 			"left ARM": { "name": "Huni/left-arm", "x": 15.19, "y": -0.04, "scaleX": 1.384, "rotation": 27.14, "width": 27, "height": 24 }
 		},
 		"left foot": {
-			"Left foot": { "name": "Huni/left-foot", "x": 8.38, "y": 4.91, "rotation": 80.8, "width": 30, "height": 28 }
+			"Left foot": { "name": "Huni/left-foot", "x": 4.44, "y": 4.27, "rotation": 80.8, "width": 30, "height": 30 }
 		},
 		"left hand": {
-			"left HAND": { "name": "Huni/left-hand", "x": 5.7, "y": -0.47, "scaleX": 1.028, "scaleY": 1.028, "rotation": 33.39, "width": 23, "height": 23 }
+			"left HAND": { "name": "Huni/left-hand", "x": 9.65, "y": -1.28, "scaleX": 1.028, "scaleY": 1.028, "rotation": 35.15, "width": 23, "height": 23 }
 		},
 		"left lower leg": {
-			"Left Lower Leg": { "name": "Huni/left-lower-leg", "x": 19.17, "y": 0.25, "rotation": 93.44, "width": 22, "height": 43 }
+			"Left Lower Leg": { "name": "Huni/left-lower-leg", "x": 6.46, "y": 1.1, "rotation": 93.14, "width": 22, "height": 43 }
 		},
 		"left shoulder": {
-			"left shoulder": { "name": "Huni/left-shoulder", "x": 21.37, "y": -2.64, "scaleX": 1.934, "rotation": 26.88, "width": 27, "height": 24 }
+			"left shoulder": { "name": "Huni/left-shoulder", "x": 21.37, "y": -2.64, "scaleX": 1.934, "rotation": 24.23, "width": 27, "height": 24 }
 		},
 		"left upper leg": {
-			"Left upper Leg": { "name": "Huni/left-upper-leg", "x": 24.12, "y": -2.09, "rotation": 83.26, "width": 32, "height": 70 }
+			"Left upper Leg": {
+				"name": "Huni/left-upper-leg",
+				"x": 19.21,
+				"y": 2.57,
+				"scaleX": 0.909,
+				"scaleY": 0.809,
+				"rotation": 88.17,
+				"width": 32,
+				"height": 70
+			}
 		},
 		"lowest-torso": {
-			"lowest torso": { "name": "Huni/lowest-torso", "x": 14.72, "y": 3.04, "rotation": -94.05, "width": 41, "height": 25 }
+			"lowest torso": { "name": "Huni/lowest-torso", "x": 14.72, "y": 3.04, "scaleX": 1.066, "rotation": -94.05, "width": 41, "height": 25 }
 		},
 		"middle-torso": {
 			"Middle-torso": { "name": "Huni/lower-torso", "x": 2.75, "y": 2.59, "rotation": -90.45, "width": 42, "height": 34 }
 		},
 		"mouth": {
-			"mouth skin": { "name": "Huni/mouth", "x": 7.41, "y": -19.88, "scaleX": 0.847, "scaleY": 0.769, "rotation": -65.86, "width": 21, "height": 9 }
+			"mouth skin": { "name": "Huni/mouth", "x": 12.66, "y": -17.86, "scaleX": 0.847, "scaleY": 0.769, "rotation": -65.86, "width": 21, "height": 9 }
 		},
 		"neck": {
-			"Neck": { "name": "Huni/neck", "x": 7.54, "y": 1.76, "rotation": -80.75, "width": 22, "height": 28 }
+			"Neck": { "name": "Huni/neck", "x": 5.67, "y": 4.62, "scaleX": 1.152, "scaleY": 0.927, "rotation": -80.75, "width": 26, "height": 28 }
 		},
 		"pelvis": {
 			"Pelvis": { "name": "Huni/pelvis", "x": -6.26, "y": 6.35, "width": 41, "height": 27 }
 		},
 		"right arm": {
-			"right ARM": { "name": "Huni/right-arm", "x": 22.87, "y": 0.48, "rotation": 87.2, "width": 22, "height": 46 }
+			"right ARM": { "name": "Huni/right-arm", "x": 22.87, "y": 0.48, "rotation": 72.79, "width": 26, "height": 46 }
 		},
 		"right foot": {
-			"right FOOT": { "name": "Huni/right-foot", "x": 5.86, "y": 5.23, "rotation": 83.53, "width": 27, "height": 30 }
+			"right FOOT": { "name": "Huni/right-foot", "x": 9.16, "y": 4.43, "rotation": 83.53, "width": 30, "height": 30 }
 		},
 		"right hand": {
-			"right HAND": { "name": "Huni/right-hand", "x": 10.41, "y": 3.53, "rotation": 77.83, "width": 22, "height": 27 }
+			"right HAND": { "name": "Huni/right-hand", "x": 10.41, "y": 3.53, "rotation": 67.11, "width": 26, "height": 27 }
 		},
 		"right lower leg": {
-			"right lower LEG": { "name": "Huni/right-lower-leg", "x": 15.53, "y": 2.44, "rotation": 97.42, "width": 22, "height": 43 }
+			"right lower LEG": { "name": "Huni/right-lower-leg", "x": 9.61, "y": -0.63, "rotation": 94.08, "width": 22, "height": 43 }
 		},
 		"right shoulder": {
-			"right SHOULDER": { "name": "Huni/right-shoulder", "x": 21.12, "y": -0.76, "rotation": 128.69, "width": 29, "height": 48 }
+			"right SHOULDER": { "name": "Huni/right-shoulder", "x": 23.47, "y": 1.12, "rotation": 127.12, "width": 32, "height": 48 }
 		},
 		"right upper leg": {
-			"right upper LEG": { "name": "Huni/right-upper-leg", "x": 25.51, "y": -0.45, "rotation": 90.82, "width": 25, "height": 67 }
+			"right upper LEG": {
+				"name": "Huni/right-upper-leg",
+				"x": 19.57,
+				"y": 0.39,
+				"scaleX": 0.962,
+				"scaleY": 0.803,
+				"rotation": 83.18,
+				"width": 32,
+				"height": 70
+			}
 		},
 		"torso": {
 			"Torso": { "name": "Huni/torso", "x": 7.44, "y": 7.73, "rotation": -90.9, "width": 54, "height": 54 }
