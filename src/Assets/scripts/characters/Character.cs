@@ -84,7 +84,6 @@ public abstract class Character : MonoBehaviour {
 	
 	public void Attack() {
 		//attack in front of me
-		SkeletonAnimation.state.ClearAnimation();
 		SkeletonAnimation.state.SetAnimation("idle", false);
 		SkeletonAnimation.state.SetAnimation("attack-" + Weapon.ToString().ToLower(), false);
 	}
