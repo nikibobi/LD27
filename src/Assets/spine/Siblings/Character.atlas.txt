@@ -5,7 +5,7 @@ filter: Nearest,Nearest
 repeat: none
 Huni/eyes
   rotate: false
-  xy: 308, 6
+  xy: 335, 6
   size: 34, 16
   orig: 36, 17
   offset: 1, 0
@@ -26,70 +26,70 @@ Simon/head
   index: -1
 Huni/left-arm
   rotate: true
-  xy: 801, 43
-  size: 27, 24
-  orig: 27, 24
-  offset: 0, 0
-  index: -1
-Huni/left-shoulder
-  rotate: true
-  xy: 801, 43
-  size: 27, 24
-  orig: 27, 24
-  offset: 0, 0
-  index: -1
-Simon/left-shoulder
-  rotate: true
-  xy: 801, 43
+  xy: 802, 43
   size: 27, 24
   orig: 27, 24
   offset: 0, 0
   index: -1
 Simon/left-arm
   rotate: true
-  xy: 801, 43
+  xy: 802, 43
+  size: 27, 24
+  orig: 27, 24
+  offset: 0, 0
+  index: -1
+Huni/left-shoulder
+  rotate: true
+  xy: 802, 43
+  size: 27, 24
+  orig: 27, 24
+  offset: 0, 0
+  index: -1
+Simon/left-shoulder
+  rotate: true
+  xy: 802, 43
   size: 27, 24
   orig: 27, 24
   offset: 0, 0
   index: -1
 Huni/left-foot
   rotate: false
-  xy: 827, 44
+  xy: 828, 44
   size: 30, 28
   orig: 30, 28
   offset: 0, 0
   index: -1
 Simon/left-foot
   rotate: false
-  xy: 827, 44
+  xy: 828, 44
   size: 30, 28
   orig: 30, 28
   offset: 0, 0
   index: -1
 Huni/left-hand
   rotate: false
-  xy: 398, 2
+  xy: 875, 73
   size: 23, 23
   orig: 23, 23
   offset: 0, 0
   index: -1
 Simon/left-hand
   rotate: false
-  xy: 398, 2
+  xy: 875, 73
   size: 23, 23
   orig: 23, 23
   offset: 0, 0
   index: -1
 Huni/left-lower-leg
   rotate: true
-  xy: 263, 4
+  xy: 290, 4
   size: 18, 43
   orig: 18, 43
   offset: 0, 0
   index: -1
 Simon/left-lower-leg
   rotate: true
-  xy: 263, 4
+  xy: 290, 4
   size: 18, 43
   orig: 18, 43
   offset: 0, 0
@@ -109,155 +109,148 @@ Simon/left-upper-leg
   offset: 0, 0
   index: -1
 Huni/lower-torso
-  rotate: true
-  xy: 2, 2
-  size: 38, 34
-  orig: 38, 34
-  offset: 0, 0
-  index: -1
-Simon/lower-torso
-  rotate: true
-  xy: 2, 2
-  size: 38, 34
-  orig: 38, 34
+  rotate: false
+  xy: 715, 36
+  size: 42, 34
+  orig: 42, 34
   offset: 0, 0
   index: -1
 Huni/lowest-torso
-  rotate: false
-  xy: 715, 45
+  rotate: true
+  xy: 236, 2
   size: 41, 25
   orig: 41, 25
   offset: 0, 0
   index: -1
 Simon/lowest-torso
-  rotate: false
-  xy: 715, 45
+  rotate: true
+  xy: 236, 2
   size: 41, 25
   orig: 41, 25
   offset: 0, 0
   index: -1
 Huni/mouth
   rotate: true
-  xy: 344, 2
+  xy: 371, 2
   size: 20, 9
   orig: 21, 9
   offset: 0, 0
   index: -1
 Huni/neck
-  rotate: false
-  xy: 871, 68
+  rotate: true
+  xy: 929, 77
   size: 22, 28
   orig: 22, 28
   offset: 0, 0
   index: -1
 Simon/neck
-  rotate: false
-  xy: 871, 68
+  rotate: true
+  xy: 929, 77
   size: 22, 28
   orig: 22, 28
   offset: 0, 0
   index: -1
 Huni/pelvis
   rotate: false
-  xy: 758, 43
+  xy: 759, 43
   size: 41, 27
   orig: 41, 27
   offset: 0, 0
   index: -1
 pelvis
   rotate: false
-  xy: 758, 43
+  xy: 759, 43
   size: 41, 27
   orig: 41, 27
   offset: 0, 0
   index: -1
 Simon/pelvis
   rotate: false
-  xy: 758, 43
+  xy: 759, 43
   size: 41, 27
   orig: 41, 27
   offset: 0, 0
   index: -1
 Huni/right-arm
   rotate: true
-  xy: 823, 74
+  xy: 827, 74
   size: 22, 46
   orig: 22, 46
   offset: 0, 0
   index: -1
 Simon/right-arm
   rotate: true
-  xy: 823, 74
+  xy: 827, 74
   size: 22, 46
   orig: 22, 46
   offset: 0, 0
   index: -1
 Huni/right-foot
   rotate: true
-  xy: 927, 72
+  xy: 425, 16
   size: 27, 30
   orig: 27, 30
   offset: 0, 0
   index: -1
 right-foot
   rotate: true
-  xy: 927, 72
+  xy: 425, 16
   size: 27, 30
   orig: 27, 30
   offset: 0, 0
   index: -1
 Simon/right-foot
   rotate: true
-  xy: 927, 72
+  xy: 425, 16
   size: 27, 30
   orig: 27, 30
   offset: 0, 0
   index: -1
 Huni/right-hand
-  rotate: false
-  xy: 988, 68
-  size: 22, 27
-  orig: 22, 27
-  offset: 0, 0
-  index: -1
-Simon/right-hand
-  rotate: false
-  xy: 988, 68
+  rotate: true
+  xy: 526, 27
   size: 22, 27
   orig: 22, 27
   offset: 0, 0
   index: -1
 right-hand
-  rotate: false
-  xy: 988, 68
+  rotate: true
+  xy: 526, 27
+  size: 22, 27
+  orig: 22, 27
+  offset: 0, 0
+  index: -1
+Simon/right-hand
+  rotate: true
+  xy: 526, 27
   size: 22, 27
   orig: 22, 27
   offset: 0, 0
   index: -1
 Huni/right-lower-leg
   rotate: true
-  xy: 263, 24
+  xy: 290, 24
   size: 19, 43
   orig: 19, 43
   offset: 0, 0
   index: -1
 Simon/right-lower-leg
   rotate: true
-  xy: 263, 24
+  xy: 290, 24
   size: 19, 43
   orig: 19, 43
   offset: 0, 0
   index: -1
 Huni/right-shoulder
   rotate: true
-  xy: 964, 97
+  xy: 968, 97
   size: 29, 48
   orig: 29, 48
   offset: 0, 0
   index: -1
 Simon/right-shoulder
   rotate: true
-  xy: 964, 97
+  xy: 968, 97
   size: 29, 48
   orig: 29, 48
   offset: 0, 0
@@ -279,27 +272,34 @@ Simon/right-upper-leg
 Huni/torso
   rotate: false
   xy: 667, 72
-  size: 50, 54
-  orig: 50, 54
+  size: 54, 54
+  orig: 54, 54
   offset: 0, 0
   index: -1
 Simon/eyes
-  rotate: false
-  xy: 398, 27
+  rotate: true
+  xy: 215, 6
   size: 34, 16
   orig: 36, 17
   offset: 1, 0
   index: -1
+Simon/lower-torso
+  rotate: true
+  xy: 2, 2
+  size: 38, 34
+  orig: 38, 34
+  offset: 0, 0
+  index: -1
 Simon/mouth
-  rotate: false
-  xy: 434, 34
+  rotate: true
+  xy: 860, 52
   size: 20, 9
   orig: 21, 9
   offset: 0, 0
   index: -1
 Simon/torso
   rotate: false
-  xy: 719, 72
+  xy: 723, 72
   size: 50, 54
   orig: 50, 54
   offset: 0, 0
@@ -312,8 +312,8 @@ blunt
   offset: 0, 0
   index: -1
 eyes
-  rotate: true
-  xy: 1012, 62
+  rotate: false
+  xy: 491, 39
   size: 33, 10
   orig: 33, 10
   offset: 0, 0
@@ -327,42 +327,42 @@ head
   index: -1
 left-arm
   rotate: false
-  xy: 959, 71
+  xy: 900, 75
   size: 27, 24
   orig: 27, 24
   offset: 0, 0
   index: -1
 left-shoulder
   rotate: false
-  xy: 959, 71
+  xy: 900, 75
   size: 27, 24
   orig: 27, 24
   offset: 0, 0
   index: -1
 left-foot
   rotate: false
-  xy: 895, 71
+  xy: 457, 10
   size: 30, 28
   orig: 30, 28
   offset: 0, 0
   index: -1
 left-hand
   rotate: false
-  xy: 423, 2
+  xy: 519, 2
   size: 23, 23
   orig: 23, 23
   offset: 0, 0
   index: -1
 left-lower-leg
   rotate: true
-  xy: 353, 25
+  xy: 380, 25
   size: 18, 43
   orig: 18, 43
   offset: 0, 0
   index: -1
 left-upper-leg
   rotate: true
-  xy: 823, 98
+  xy: 827, 98
   size: 28, 70
   orig: 28, 70
   offset: 0, 0
@@ -383,21 +383,21 @@ lower-torso
   index: -1
 lowest-torso
   rotate: true
-  xy: 236, 2
+  xy: 263, 2
   size: 41, 25
   orig: 41, 25
   offset: 0, 0
   index: -1
 mouth
   rotate: false
-  xy: 215, 25
+  xy: 555, 34
   size: 18, 15
   orig: 18, 15
   offset: 0, 0
   index: -1
 neck
   rotate: true
-  xy: 859, 44
+  xy: 489, 15
   size: 22, 28
   orig: 22, 28
   offset: 0, 0
@@ -411,7 +411,7 @@ right-arm
   index: -1
 right-lower-leg
   rotate: true
-  xy: 308, 24
+  xy: 335, 24
   size: 19, 43
   orig: 19, 43
   offset: 0, 0
@@ -425,7 +425,7 @@ right-shoulder
   index: -1
 right-upper-leg
   rotate: true
-  xy: 895, 101
+  xy: 899, 101
   size: 25, 67
   orig: 25, 67
   offset: 0, 0
@@ -439,7 +439,7 @@ sharp
   index: -1
 torso
   rotate: false
-  xy: 771, 72
+  xy: 775, 72
   size: 50, 54
   orig: 50, 54
   offset: 0, 0
