@@ -31,7 +31,7 @@
 	{ "name": "right hand", "parent": "right arm", "length": 15.32, "x": 39.87, "y": 0.01, "rotation": 9.37 }
 ],
 "slots": [
-	{ "name": "weapon", "bone": "left hand", "attachment": "sharp" },
+	{ "name": "weapon", "bone": "left hand" },
 	{ "name": "left shoulder", "bone": "left shoulder", "attachment": "left shoulder" },
 	{ "name": "left arm", "bone": "left arm", "attachment": "left ARM" },
 	{ "name": "left hand", "bone": "left hand", "attachment": "left HAND" },
@@ -1821,109 +1821,109 @@
 			"hip": {
 				"rotate": [
 					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 0 }
+					{ "time": 0.5333, "angle": 0 }
 				]
 			},
 			"left upper leg": {
 				"rotate": [
 					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 0 }
+					{ "time": 0.5333, "angle": 0 }
 				]
 			},
 			"right upper leg": {
 				"rotate": [
 					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 0 }
+					{ "time": 0.5333, "angle": 0 }
 				]
 			},
 			"torso": {
 				"rotate": [
 					{ "time": 0, "angle": 12.76 },
-					{ "time": 0.3333, "angle": -0.61 }
+					{ "time": 0.5333, "angle": -0.61 }
 				]
 			},
 			"left lower leg": {
 				"rotate": [
 					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 0 }
+					{ "time": 0.5333, "angle": 0 }
 				]
 			},
 			"middle-torso": {
 				"rotate": [
 					{ "time": 0, "angle": -18.55 },
-					{ "time": 0.3333, "angle": 2.21 }
+					{ "time": 0.5333, "angle": 2.21 }
 				]
 			},
 			"right lower leg": {
 				"rotate": [
 					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 0 }
+					{ "time": 0.5333, "angle": 0 }
 				]
 			},
 			"left foot": {
 				"rotate": [
 					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 0 }
+					{ "time": 0.5333, "angle": 0 }
 				]
 			},
 			"lowest-torso": {
 				"rotate": [
 					{ "time": 0, "angle": -7.72 },
-					{ "time": 0.3333, "angle": -1.79 }
+					{ "time": 0.5333, "angle": -1.79 }
 				]
 			},
 			"right foot": {
 				"rotate": [
 					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 0 }
+					{ "time": 0.5333, "angle": 0 }
 				]
 			},
 			"left shoulder": {
 				"rotate": [
 					{ "time": 0, "angle": -31.73 },
-					{ "time": 0.3333, "angle": 46.53 }
+					{ "time": 0.5333, "angle": 46.53 }
 				]
 			},
 			"neck": {
 				"rotate": [
 					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 0 }
+					{ "time": 0.5333, "angle": 0 }
 				]
 			},
 			"right shoulder": {
 				"rotate": [
 					{ "time": 0, "angle": 36.11 },
-					{ "time": 0.3333, "angle": -252.1 }
+					{ "time": 0.5333, "angle": -252.1 }
 				]
 			},
 			"head": {
 				"rotate": [
 					{ "time": 0, "angle": 8.53, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 8.53 }
+					{ "time": 0.5333, "angle": 8.53 }
 				]
 			},
 			"left arm": {
 				"rotate": [
 					{ "time": 0, "angle": 123.37 },
-					{ "time": 0.3333, "angle": 15.93 }
+					{ "time": 0.5333, "angle": 15.93 }
 				]
 			},
 			"right arm": {
 				"rotate": [
 					{ "time": 0, "angle": 57.35 },
-					{ "time": 0.3333, "angle": -10.21 }
+					{ "time": 0.5333, "angle": -10.21 }
 				]
 			},
 			"left hand": {
 				"rotate": [
 					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 0 }
+					{ "time": 0.5333, "angle": 0 }
 				]
 			},
 			"right hand": {
 				"rotate": [
 					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.3333, "angle": 0 }
+					{ "time": 0.5333, "angle": 0 }
 				]
 			}
 		}
