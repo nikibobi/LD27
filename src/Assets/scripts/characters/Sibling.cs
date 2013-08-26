@@ -26,7 +26,6 @@ public class Sibling : Character {
 		set {
 			state = value;
 			started = false;
-			Selected = state != MoveState.Paused;
 		}
 	}
 	public bool Selected {
@@ -51,9 +50,10 @@ public class Sibling : Character {
 	{
 		base.Restart();
 		State = MoveState.Recording;
-		Direction = 1;
 		Ability = true;
 		Seconds = 0;
+		Tfm.position = InitialPosition;
+		Direction = 1;
 	}
 	
 	protected override void Update() {
@@ -69,7 +69,12 @@ public class Sibling : Character {
 					Idle();
 				}
 			
-				var key = new Key();
+				if(Seconds >= 10) {
+					Seconds = 10;
+					return;
+				}
+			
+				var key = new Key(this.Seconds);
 				if(Input.GetKeyUp(Settings.Keymap.Walk) || 
 				   Input.GetKeyUp(Settings.Keymap.Attack) ||
 				   Input.GetKeyUp(Settings.Keymap.UseAbility))
@@ -92,7 +97,12 @@ public class Sibling : Character {
 				}
 				break;
 			case MoveState.Playing:
-				if(Moves.Count > 0 && Moves.Peek().Time <= Game.Seconds)
+				if(!started) {
+					Tfm.position = InitialPosition;
+					Ability = true;
+					started = true;
+				}
+				if(Moves.Count > 0 && Game.Seconds >= Moves.Peek().Time)
 					Moves.Dequeue().Action();
 				break;
 			default:

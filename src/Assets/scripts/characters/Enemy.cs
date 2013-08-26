@@ -13,16 +13,24 @@ public class Enemy : Character {
 	public override void Restart()
 	{
 		base.Restart();
-		Moves.Enqueue(new Key(0, Idle));
-		Moves.Enqueue(new Key(UnityEngine.Random.Range(0f, 5f), Walk));
+		Moves.Enqueue(new Key(0f, Idle));
+		Moves.Enqueue(new Key(1f, Walk));
 		Direction = -1;
 	}
 	
 	protected override void Update()
 	{
 		base.Update();
-		if(Moves.Count > 0 && Moves.Peek().Time <= Game.Seconds) {
-			Moves.Dequeue().Action();
+		if(Game.RecordingState) {
+			if(Game.CurrentSibling.State == Sibling.MoveState.Recording) {
+				if(Moves.Count > 0 && Game.CurrentSibling.Seconds >= Moves.Peek().Time) {
+					Moves.Dequeue().Action();
+				}	
+			}
+		} else {
+			if(Moves.Count > 0 && Game.Seconds >= Moves.Peek().Time) {
+				Moves.Dequeue().Action();
+			}
 		}
 	}
 }

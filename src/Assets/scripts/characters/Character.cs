@@ -27,17 +27,7 @@ public abstract class Character : MonoBehaviour {
 	
 	public float Speed;
 	
-	private Vector3 initialPosition;
-	private WeaponType weapon;
-	
-	public WeaponType Weapon {
-		get {
-			return weapon;
-		}
-		set {
-			weapon = value;
-		}
-	}
+	public WeaponType Weapon { get; set; }
 	public float Direction {
 		get {
 			return Mathf.Sign(Tfm.localScale.x);
@@ -50,17 +40,18 @@ public abstract class Character : MonoBehaviour {
 	protected Queue<Key> Moves { get; private set; }
 	protected SkeletonAnimation SkeletonAnimation { get; private set; }
 	protected Transform Tfm { get; private set; }
+	protected Vector3 InitialPosition { get; private set; }
 	
 	protected virtual void Start() {
 		Moves = new Queue<Key>();
 		SkeletonAnimation = GetComponent<SkeletonAnimation>();
 		Tfm = transform;
-		initialPosition = Tfm.position;
+		InitialPosition = Tfm.position;
 	}
 	
 	public virtual void Restart() {
 		Moves.Clear();
-		Tfm.position = initialPosition;
+		Tfm.position = InitialPosition;
 	}
 	
 	protected virtual void Update() {
