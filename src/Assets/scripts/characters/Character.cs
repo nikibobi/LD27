@@ -36,6 +36,8 @@ public abstract class Character : MonoBehaviour {
 		}
 		set {
 			weapon = value;
+			
+			//SkeletonAnimation.skeleton.SetAttachment("weapon", weapon.ToString().ToLower());
 		}
 	}
 	public float Direction {
@@ -78,13 +80,13 @@ public abstract class Character : MonoBehaviour {
 	
 	public void Walk() {
 		//moves foreward
-		SkeletonAnimation.state.ClearAnimation();
-		SkeletonAnimation.state.AddAnimation("walk", true);
+		SkeletonAnimation.skeleton.SetToSetupPose();
+		SkeletonAnimation.state.SetAnimation("walk", true);
 	}
 	
 	public void Attack() {
 		//attack in front of me
-		SkeletonAnimation.state.SetAnimation("idle", false);
+		SkeletonAnimation.skeleton.SetToSetupPose();
 		SkeletonAnimation.state.SetAnimation("attack-" + Weapon.ToString().ToLower(), false);
 	}
 }

@@ -20,7 +20,7 @@ public class Sibling : Character {
 		}
 		set {
 			state = value;
-			SkeletonAnimation.state.ClearAnimation();
+			SkeletonAnimation.skeleton.SetToSetupPose();
 			switch(state) {
 				case MoveState.NotSelected:
 				case MoveState.Playing:

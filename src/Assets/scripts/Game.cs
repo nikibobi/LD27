@@ -6,9 +6,11 @@ public class Game : MonoBehaviour {
 	
 	public GUISkin SkinGUI;
 	public GameObject[] SiblingPrefabs;
+	public GameObject[] EnemyPerfabs;
 	
-	private Transform cameraTransform;
-	private Vector3 cameraOffset;
+	private Transform tfm;
+	private Vector3 initialPosition;
+	private List<Enemy> enemies;
 	private LinkedList<Sibling> siblings;
 	private LinkedListNode<Sibling> current;
 	
@@ -28,14 +30,24 @@ public class Game : MonoBehaviour {
 	public static float Seconds { get; private set; }
 
 	void Start() {
-		cameraTransform = transform;
-		cameraOffset = cameraTransform.position;
+		enemies = new List<Enemy>();
+		siblings = new LinkedList<Sibling>();
+		tfm = transform;
+		initialPosition = tfm.position;
 		Restart();
 	}
 	
 	void Restart() {
 		Seconds = 0;
-		siblings = new LinkedList<Sibling>();
+		
+		enemies.Clear();
+		foreach(var prefab in EnemyPerfabs) {
+			var enemy = prefab.GetComponent<Enemy>();
+			enemy.Weapon = (WeaponType)UnityEngine.Random.Range(0, 3);
+			enemies.Add(enemy);
+		}
+		
+		siblings.Clear();
 		foreach(var prefab in SiblingPrefabs) {
 			var sibling = prefab.GetComponent<Sibling>();
 			sibling.Weapon = (WeaponType)UnityEngine.Random.Range(0, 3);
@@ -58,7 +70,7 @@ public class Game : MonoBehaviour {
 		if(Input.GetKeyDown(Settings.Keymap.Restart))
 			Current.Value.Restart();
 		
-		cameraTransform.position = new Vector3(Current.Value.transform.position.x, Current.Value.transform.position.y)  + cameraOffset;
+		tfm.position = new Vector3(Current.Value.transform.position.x, Current.Value.transform.position.y)  + initialPosition;
 	}
 	
 	void OnGUI() {
