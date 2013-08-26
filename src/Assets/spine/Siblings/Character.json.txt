@@ -285,6 +285,13 @@
 					{ "time": 1.3333, "angle": 0 }
 				]
 			}
+		},
+		"slots": {
+			"weapon": {
+				"attachment": [
+					{ "time": 0, "name": "blunt" }
+				]
+			}
 		}
 	},
 	"attack-long": {
