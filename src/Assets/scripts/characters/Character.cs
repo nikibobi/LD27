@@ -64,9 +64,8 @@ public abstract class Character : MonoBehaviour {
 	}
 	
 	protected virtual void Update() {
-		if(Walking) {
-			Tfm.position += new Vector3(Direction * Speed * Time.deltaTime , 0, 0);	
-		}
+		if(Walking)
+			Tfm.position += new Vector3(Direction * Speed * Time.deltaTime , 0, 0);
 	}
 	
 	public void Idle() {

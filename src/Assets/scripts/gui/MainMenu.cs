@@ -27,14 +27,13 @@ public class MainMenu : MonoBehaviour {
 					MenuButton("Play", Settings.Palete.Green, () => Application.LoadLevel("Game"));
 					MenuButton("Credits", Settings.Palete.Blue, () => State = MenuState.Credits);
 					MenuButton("Quit", Settings.Palete.Red, Application.Quit);
-					GUILayout.FlexibleSpace();
 					break;
 				case MenuState.Credits:
 					GUILayout.FlexibleSpace();
 					MenuButton("Borislav Kosharov", Settings.Palete.Yellow, () => Application.OpenURL("https://github.com/nikibobi"));
-					MenuButton("Viktor Danev", Settings.Palete.Cyan, () => Application.OpenURL("https://github.com/Metaknigth"));
-					MenuButton("Back", Settings.Palete.Magenta, () => State = MenuState.Main);
-					GUILayout.FlexibleSpace();
+					MenuButton("Viktor Danev", Settings.Palete.Magenta, () => Application.OpenURL("https://github.com/Metaknigth"));
+					MenuButton("Nikolai Kosharov", Settings.Palete.Cyan, () => Application.OpenURL("http://medik3.tumblr.com/"));
+					MenuButton("Back", Settings.Palete.Red, () => State = MenuState.Main);
 					break;
 			}
 			GUILayout.EndVertical();
