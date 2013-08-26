@@ -24,27 +24,6 @@ Huni/left-arm
   orig: 27, 24
   offset: 0, 0
   index: -1
-Huni/left-shoulder
-  rotate: true
-  xy: 215, 13
-  size: 27, 24
-  orig: 27, 24
-  offset: 0, 0
-  index: -1
-Simon/left-shoulder
-  rotate: true
-  xy: 215, 13
-  size: 27, 24
-  orig: 27, 24
-  offset: 0, 0
-  index: -1
-Simon/left-arm
-  rotate: true
-  xy: 215, 13
-  size: 27, 24
-  orig: 27, 24
-  offset: 0, 0
-  index: -1
 Huni/left-foot
   rotate: false
   xy: 241, 15
@@ -61,14 +40,14 @@ Simon/left-foot
   index: -1
 Huni/left-hand
   rotate: false
-  xy: 396, 2
+  xy: 908, 46
   size: 23, 23
   orig: 23, 23
   offset: 0, 0
   index: -1
 Simon/left-hand
   rotate: false
-  xy: 396, 2
+  xy: 908, 46
   size: 23, 23
   orig: 23, 23
   offset: 0, 0
@@ -85,6 +64,27 @@ Simon/left-lower-leg
   xy: 668, 10
   size: 18, 43
   orig: 18, 43
+  offset: 0, 0
+  index: -1
+Huni/left-shoulder
+  rotate: false
+  xy: 337, 19
+  size: 27, 24
+  orig: 27, 24
+  offset: 0, 0
+  index: -1
+Simon/left-arm
+  rotate: false
+  xy: 337, 19
+  size: 27, 24
+  orig: 27, 24
+  offset: 0, 0
+  index: -1
+Simon/left-shoulder
+  rotate: false
+  xy: 337, 19
+  size: 27, 24
+  orig: 27, 24
   offset: 0, 0
   index: -1
 Huni/left-upper-leg
@@ -124,14 +124,14 @@ Huni/mouth
   index: -1
 Huni/neck
   rotate: true
-  xy: 366, 21
+  xy: 395, 21
   size: 22, 28
   orig: 22, 28
   offset: 0, 0
   index: -1
 Simon/neck
   rotate: true
-  xy: 366, 21
+  xy: 395, 21
   size: 22, 28
   orig: 22, 28
   offset: 0, 0
@@ -143,14 +143,14 @@ Huni/pelvis
   orig: 41, 27
   offset: 0, 0
   index: -1
-Simon/pelvis
+pelvis
   rotate: false
   xy: 806, 43
   size: 41, 27
   orig: 41, 27
   offset: 0, 0
   index: -1
-pelvis
+Simon/pelvis
   rotate: false
   xy: 806, 43
   size: 41, 27
@@ -178,14 +178,14 @@ Huni/right-foot
   orig: 27, 30
   offset: 0, 0
   index: -1
-right-foot
+Simon/right-foot
   rotate: true
   xy: 305, 16
   size: 27, 30
   orig: 27, 30
   offset: 0, 0
   index: -1
-Simon/right-foot
+right-foot
   rotate: true
   xy: 305, 16
   size: 27, 30
@@ -194,21 +194,21 @@ Simon/right-foot
   index: -1
 Huni/right-hand
   rotate: true
-  xy: 476, 2
-  size: 22, 27
-  orig: 22, 27
-  offset: 0, 0
-  index: -1
-Simon/right-hand
-  rotate: true
-  xy: 476, 2
+  xy: 491, 5
   size: 22, 27
   orig: 22, 27
   offset: 0, 0
   index: -1
 right-hand
   rotate: true
-  xy: 476, 2
+  xy: 491, 5
+  size: 22, 27
+  orig: 22, 27
+  offset: 0, 0
+  index: -1
+Simon/right-hand
+  rotate: true
+  xy: 491, 5
   size: 22, 27
   orig: 22, 27
   offset: 0, 0
@@ -264,7 +264,7 @@ Huni/torso
   index: -1
 Simon/eyes
   rotate: false
-  xy: 396, 27
+  xy: 455, 22
   size: 34, 16
   orig: 36, 17
   offset: 1, 0
@@ -291,8 +291,8 @@ Simon/lowest-torso
   offset: 0, 0
   index: -1
 Simon/mouth
-  rotate: false
-  xy: 432, 34
+  rotate: true
+  xy: 520, 7
   size: 20, 9
   orig: 21, 9
   offset: 0, 0
@@ -327,14 +327,14 @@ head
   index: -1
 left-arm
   rotate: false
-  xy: 337, 19
+  xy: 366, 19
   size: 27, 24
   orig: 27, 24
   offset: 0, 0
   index: -1
 left-shoulder
   rotate: false
-  xy: 337, 19
+  xy: 366, 19
   size: 27, 24
   orig: 27, 24
   offset: 0, 0
@@ -348,7 +348,7 @@ left-foot
   index: -1
 left-hand
   rotate: false
-  xy: 421, 2
+  xy: 933, 46
   size: 23, 23
   orig: 23, 23
   offset: 0, 0
@@ -397,7 +397,7 @@ mouth
   index: -1
 neck
   rotate: true
-  xy: 446, 2
+  xy: 425, 21
   size: 22, 28
   orig: 22, 28
   offset: 0, 0

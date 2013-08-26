@@ -452,6 +452,135 @@
 			}
 		}
 	},
+	"idle-blunt": {
+		"bones": {
+			"left shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 305.82 }
+				]
+			},
+			"right shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 28.49 }
+				]
+			},
+			"left arm": {
+				"rotate": [
+					{ "time": 0, "angle": 14.84 }
+				]
+			},
+			"right arm": {
+				"rotate": [
+					{ "time": 0, "angle": -16.42 }
+				]
+			},
+			"left hand": {
+				"rotate": [
+					{ "time": 0, "angle": -31.9 }
+				]
+			},
+			"head": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.4333, "x": -1.84, "y": -0.3 },
+					{ "time": 0.8666, "x": 0, "y": 0 }
+				]
+			}
+		},
+		"slots": {
+			"weapon": {
+				"attachment": [
+					{ "time": 0, "name": "blunt" }
+				]
+			}
+		}
+	},
+	"idle-long": {
+		"bones": {
+			"left shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 305.82 }
+				]
+			},
+			"right shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 28.49 }
+				]
+			},
+			"left arm": {
+				"rotate": [
+					{ "time": 0, "angle": 14.84 }
+				]
+			},
+			"right arm": {
+				"rotate": [
+					{ "time": 0, "angle": -16.42 }
+				]
+			},
+			"left hand": {
+				"rotate": [
+					{ "time": 0, "angle": -31.9 }
+				]
+			},
+			"head": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.4333, "x": -1.84, "y": -0.3 },
+					{ "time": 0.8666, "x": 0, "y": 0 }
+				]
+			}
+		},
+		"slots": {
+			"weapon": {
+				"attachment": [
+					{ "time": 0, "name": "long" }
+				]
+			}
+		}
+	},
+	"idle-sharp": {
+		"bones": {
+			"left shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 305.82 }
+				]
+			},
+			"right shoulder": {
+				"rotate": [
+					{ "time": 0, "angle": 28.49 }
+				]
+			},
+			"left arm": {
+				"rotate": [
+					{ "time": 0, "angle": 14.84 }
+				]
+			},
+			"right arm": {
+				"rotate": [
+					{ "time": 0, "angle": -16.42 }
+				]
+			},
+			"left hand": {
+				"rotate": [
+					{ "time": 0, "angle": -31.9 }
+				]
+			},
+			"head": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.4333, "x": -1.84, "y": -0.3 },
+					{ "time": 0.8666, "x": 0, "y": 0 }
+				]
+			}
+		},
+		"slots": {
+			"weapon": {
+				"attachment": [
+					{ "time": 0, "name": "sharp" }
+				]
+			}
+		}
+	},
 	"not-selected": {
 		"slots": {
 			"eyes": {
