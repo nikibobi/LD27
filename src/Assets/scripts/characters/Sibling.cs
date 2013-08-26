@@ -11,6 +11,7 @@ public class Sibling : Character {
 		Playing
 	}
 	
+	private bool started;
 	private MoveState state;
 	
 	public MoveState State { 
@@ -26,12 +27,12 @@ public class Sibling : Character {
 					Selected = false;
 					break;
 				case MoveState.Recording:
+					started = false;
 					Selected = true;		
 					break;
 			}
 		}
 	}
-	public bool Ability { get; set; }
 	public bool Selected {
 		get {
 			return transform.position.z == 0;
@@ -41,11 +42,20 @@ public class Sibling : Character {
 			SkeletonAnimation.state.SetAnimation((value?"":"not-") + "selected", false);
 		}
 	}
+	public bool Ability { get; set; }
+	public float Seconds { get; set; }
 	
 	protected override void Start() {
 		base.Start();
+		Restart();
+	}
+	
+	public override void Restart()
+	{
+		base.Restart();
 		State = MoveState.NotSelected;
 		Ability = true;
+		Seconds = 0;
 	}
 	
 	protected override void Update() {
@@ -54,26 +64,35 @@ public class Sibling : Character {
 			case MoveState.NotSelected:
 				break;
 			case MoveState.Recording:
+				if(started)
+					Seconds += Time.deltaTime;
+			
 				var key = new Key();
 				if(Input.GetKeyUp(Settings.Keymap.Walk) || 
 				   Input.GetKeyUp(Settings.Keymap.Attack) ||
 				   Input.GetKeyUp(Settings.Keymap.UseAbility))
 					key.Action = Idle;
-				if(Input.GetKeyDown(Settings.Keymap.Walk))
+				if(Input.GetKeyDown(Settings.Keymap.Walk)) {
 					key.Action = Walk;
-				if(Input.GetKeyDown(Settings.Keymap.Attack))
+				} else if(Input.GetKeyDown(Settings.Keymap.Attack)) {
 					key.Action = Attack;
-				if(Input.GetKeyDown(Settings.Keymap.UseAbility))
+				} else if(Input.GetKeyDown(Settings.Keymap.UseAbility)) {
 					key.Action = UseAbility;
+				}
 				
 				if(key.Action != null)
 				{
+					if(key.Action != Idle)
+						started = true;
+				
 					key.Action();
 					Moves.Enqueue(key);
 				}
+			
+				
 				break;
 			case MoveState.Playing:
-				while(Moves.Count > 0 && Moves.Peek().Time >= Game.Seconds)
+				if(Moves.Count > 0 && Moves.Peek().Time >= Game.Seconds)
 					Moves.Dequeue().Action();
 				break;
 			default:

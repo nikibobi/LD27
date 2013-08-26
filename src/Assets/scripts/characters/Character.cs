@@ -36,7 +36,7 @@ public abstract class Character : MonoBehaviour {
 		SkeletonAnimation = GetComponent<SkeletonAnimation>();
 	}
 	
-	public void Restart() {
+	public virtual void Restart() {
 		Moves.Clear();
 	}
 	

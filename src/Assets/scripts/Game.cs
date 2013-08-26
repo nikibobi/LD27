@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Game : MonoBehaviour {
+	
+	public GUISkin SkinGUI;
 	public GameObject[] SiblingPrefabs;
 	
 	private Transform cameraTransform;
@@ -32,6 +34,7 @@ public class Game : MonoBehaviour {
 	}
 	
 	void Restart() {
+		Seconds = 0;
 		siblings = new LinkedList<Sibling>();
 		foreach(var prefab in SiblingPrefabs) {
 			var sibling = prefab.GetComponent<Sibling>();
@@ -44,10 +47,26 @@ public class Game : MonoBehaviour {
 	
 	void Update() {
 		Seconds += Time.deltaTime;
+		
+		if(Current.Value.Seconds >= 10)
+			Current = Current.NextOrFirst();
+		
 		if(Input.GetKeyDown(Settings.Keymap.NextSibling))
 			Current = Current.NextOrFirst();
 		if(Input.GetKeyDown(Settings.Keymap.LastSibling))
 			Current = Current.PreviousOrLast();
+		if(Input.GetKeyDown(Settings.Keymap.Restart))
+			Current.Value.Restart();
+		
 		cameraTransform.position = new Vector3(Current.Value.transform.position.x, Current.Value.transform.position.y)  + cameraOffset;
+	}
+	
+	void OnGUI() {
+		//draw gui stuff here depending on state
+		GUI.skin = SkinGUI;
+		GUILayout.BeginVertical();
+		GUILayout.Label(Current.Value.Seconds.ToString("G3"));
+		GUILayout.Label(Seconds.ToString("G3"));
+		GUILayout.EndVertical();
 	}
 }

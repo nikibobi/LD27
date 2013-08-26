@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour {
 		Credits
 	}
 	
-	public GUISkin Skin;
+	public GUISkin SkinGUI;
 	public MenuState State;
 	
 	private Rect screen;
@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		GUI.skin = Skin;
+		GUI.skin = SkinGUI;
 		GUILayout.BeginArea(screen);
 			GUILayout.BeginVertical();
 			switch(State) {

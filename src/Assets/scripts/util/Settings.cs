@@ -8,6 +8,7 @@ public static class Settings {
 		public static readonly KeyCode UseAbility = KeyCode.A;
 		public static readonly KeyCode LastSibling = KeyCode.Q;
 		public static readonly KeyCode NextSibling = KeyCode.E;
+		public static readonly KeyCode Restart = KeyCode.R;
 	}
 	public static class Palete {
 		public static readonly Color Blue = Color.blue;
