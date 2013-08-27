@@ -8,6 +8,7 @@ public class Enemy : Character {
 	{
 		base.Start();
 		Restart();
+		Direction = -1;
 	}
 	
 	public override void Restart()
@@ -15,7 +16,6 @@ public class Enemy : Character {
 		base.Restart();
 		Moves.Enqueue(new Key(0f, Idle));
 		Moves.Enqueue(new Key(1f, Walk));
-		Direction = -1;
 	}
 	
 	protected override void Update()
@@ -25,7 +25,7 @@ public class Enemy : Character {
 			if(Game.CurrentSibling.State == Sibling.MoveState.Recording) {
 				if(Moves.Count > 0 && Game.CurrentSibling.Seconds >= Moves.Peek().Time) {
 					Moves.Dequeue().Action();
-				}	
+				}
 			}
 		} else {
 			if(Moves.Count > 0 && Game.Seconds >= Moves.Peek().Time) {

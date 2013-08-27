@@ -51,6 +51,7 @@ public class Sibling : Character {
 		base.Restart();
 		State = MoveState.Recording;
 		Ability = true;
+		Dieing = false;
 		Seconds = 0;
 		Tfm.position = InitialPosition;
 		Direction = 1;
@@ -75,17 +76,10 @@ public class Sibling : Character {
 				}
 			
 				var key = new Key(this.Seconds);
-				if(Input.GetKeyUp(Settings.Keymap.Walk) || 
-				   Input.GetKeyUp(Settings.Keymap.Attack) ||
-				   Input.GetKeyUp(Settings.Keymap.UseAbility))
+				if(Input.GetKeyUp(Settings.Keymap.Walk))
 					key.Action = Idle;
-				if(Input.GetKeyDown(Settings.Keymap.Walk)) {
+				else if(Input.GetKeyDown(Settings.Keymap.Walk))
 					key.Action = Walk;
-				} else if(Input.GetKeyDown(Settings.Keymap.Attack)) {
-					key.Action = Attack;
-				} else if(Input.GetKeyDown(Settings.Keymap.UseAbility)) {
-					key.Action = UseAbility;
-				}
 				
 				if(key.Action != null)
 				{

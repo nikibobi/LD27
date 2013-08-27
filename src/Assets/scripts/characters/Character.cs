@@ -61,6 +61,8 @@ public abstract class Character : MonoBehaviour {
 	}
 	
 	public void Idle() {
+		if(Dieing)
+			return;
 		//stay in one place
 		SkeletonAnimation.skeleton.SetBonesToSetupPose();
 		if(Walking)
@@ -71,6 +73,8 @@ public abstract class Character : MonoBehaviour {
 	}
 	
 	public void Walk() {
+		if(Dieing)
+			return;
 		//moves foreward
 		SkeletonAnimation.skeleton.SetBonesToSetupPose();
 		SkeletonAnimation.state.SetAnimation("walk", true);
@@ -78,6 +82,8 @@ public abstract class Character : MonoBehaviour {
 	}
 	
 	public void Attack() {
+		if(Dieing)
+			return;
 		//attack in front of me
 		SkeletonAnimation.skeleton.SetBonesToSetupPose();
 		SkeletonAnimation.state.SetAnimation(WeaponPostfix("attack"), false);

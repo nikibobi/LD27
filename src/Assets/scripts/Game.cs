@@ -17,6 +17,7 @@ public class Game : MonoBehaviour {
 	private LinkedList<Sibling> siblings;
 	private LinkedListNode<Sibling> current;
 	private bool recording;
+	private bool won;
 	
 	public LinkedListNode<Sibling> Current {
 		get {
@@ -44,6 +45,25 @@ public class Game : MonoBehaviour {
 			foreach(var sibling in siblings) {
 				sibling.State = (recording?Sibling.MoveState.Paused:Sibling.MoveState.Playing);
 			}
+			foreach(var enemy in enemies) {
+				enemy.Restart();	
+			}
+		}
+	}
+	private bool Won {
+		get {
+			foreach(var enemy in enemies)
+				if(!enemy.Dieing)
+					return false;
+			return true;
+		}
+	}
+	private bool Lost {
+		get {
+			foreach(var sibling in siblings)
+				if(!sibling.Dieing)
+					return false;
+			return true;
 		}
 	}
 	
@@ -96,9 +116,6 @@ public class Game : MonoBehaviour {
 			
 			if(Seconds >= 10) {
 				Seconds = 10;
-				if(Input.GetKeyDown(Settings.Keymap.Restart))
-					this.Restart();
-				//go to next wave?
 			}
 		}
 		
@@ -113,22 +130,44 @@ public class Game : MonoBehaviour {
 		}
 	}
 	
-	private void Battle(Character first, Character second) {
-		if(first.Weapon.Beats(second.Weapon)) {
-			first.Attack();
-			second.Die();
-		} else if(second.Weapon.Beats(first.Weapon)) {
-			first.Die();
-			second.Attack();
+	private void Battle(Sibling sibling, Enemy enemy) {
+		if(sibling.Weapon.Beats(enemy.Weapon)) {
+			sibling.Attack();
+			enemy.Die();
+		} else if(enemy.Weapon.Beats(sibling.Weapon)) {
+			if(sibling.Ability) {
+				sibling.UseAbility();
+				enemy.Die();
+			} else {
+				sibling.Die();
+				enemy.Attack();
+			}
 		}
 	}
 	
 	void OnGUI() {
-		//draw gui stuff here depending on state
 		GUI.skin = SkinGUI;
-		GUILayout.BeginVertical();
-		GUILayout.Label((Recording?Current.Value.Seconds:Seconds).ToString("G3"));
-		GUILayout.Label(Recording?"R":"P");
-		GUILayout.EndVertical();
+		if(Won || Lost) {
+			GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
+			GUILayout.BeginHorizontal();
+			GUILayout.FlexibleSpace();
+			GUILayout.BeginVertical();
+			GUILayout.FlexibleSpace();;
+			Menu.MenuButton(Won?"Won":"Lost", Won?Settings.Palete.Green:Settings.Palete.Red, () => Application.LoadLevel("Game"));
+			Menu.MenuButton("Menu", Settings.Palete.Blue, () => Application.LoadLevel("Main"));
+			GUILayout.FlexibleSpace();
+			GUILayout.EndVertical();
+			GUILayout.FlexibleSpace();
+			GUILayout.EndHorizontal();
+			GUILayout.EndArea();
+		} else {
+			GUILayout.BeginVertical();
+			GUILayout.Label((Recording?CurrentSibling.Seconds:Seconds).ToString("G3"));
+			if(Recording)
+				Menu.MenuButton("Record", Settings.Palete.Red, () => Recording = false);
+			else
+				Menu.MenuButton("Play", Settings.Palete.Green, () => Recording = true);
+			GUILayout.EndVertical();
+		}
 	}
 }

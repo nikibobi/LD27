@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class MainMenu : MonoBehaviour {
+public class Menu : MonoBehaviour {
 	public enum MenuState {
 		Main,
 		Credits
@@ -11,15 +11,13 @@ public class MainMenu : MonoBehaviour {
 	public GUISkin SkinGUI;
 	public MenuState State;
 	
-	private Rect screen;
-	
 	void Start () {
-		screen = new Rect(0, 0, Screen.width, Screen.height);
+		
 	}
 	
 	void OnGUI() {
 		GUI.skin = SkinGUI;
-		GUILayout.BeginArea(screen);
+		GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 			GUILayout.BeginVertical();
 			switch(State) {
 				case MenuState.Main:
@@ -40,7 +38,7 @@ public class MainMenu : MonoBehaviour {
 		GUILayout.EndArea();
 	}
 	
-	private void MenuButton(string text, Color color, Action action = null) {
+	public static void MenuButton(string text, Color color, Action action = null) {
 		Color temp = GUI.contentColor;
 		GUILayout.BeginHorizontal();
 			GUILayout.FlexibleSpace();
