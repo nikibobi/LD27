@@ -9,6 +9,8 @@ public class Game : MonoBehaviour {
 	public GameObject[] SiblingPrefabs;
 	public GameObject[] EnemyPerfabs;
 	
+	public const float ATTACK_RANGE = 300f;
+	
 	private Transform tfm;
 	private Vector3 initialPosition;
 	private List<Enemy> enemies;
@@ -101,6 +103,24 @@ public class Game : MonoBehaviour {
 		}
 		
 		tfm.position = new Vector3(Current.Value.transform.position.x, Current.Value.transform.position.y)  + initialPosition;
+		
+		foreach(var sibling in siblings) {
+			foreach(var enemy in enemies) {
+				if(!sibling.Dieing && !enemy.Dieing)
+					if(enemy.Tfm.position.x - sibling.Tfm.position.x <= ATTACK_RANGE)
+						Battle(sibling, enemy);
+			}
+		}
+	}
+	
+	private void Battle(Character first, Character second) {
+		if(first.Weapon.Beats(second.Weapon)) {
+			first.Attack();
+			second.Die();
+		} else if(second.Weapon.Beats(first.Weapon)) {
+			first.Die();
+			second.Attack();
+		}
 	}
 	
 	void OnGUI() {

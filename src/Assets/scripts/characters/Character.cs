@@ -37,9 +37,10 @@ public abstract class Character : MonoBehaviour {
 		}
 	}
 	public bool Walking { get; protected set; }
+	public bool Dieing { get; protected set; }
+	public Transform Tfm { get; private set; }
 	protected Queue<Key> Moves { get; private set; }
 	protected SkeletonAnimation SkeletonAnimation { get; private set; }
-	protected Transform Tfm { get; private set; }
 	protected Vector3 InitialPosition { get; private set; }
 	
 	protected virtual void Start() {
@@ -81,6 +82,13 @@ public abstract class Character : MonoBehaviour {
 		SkeletonAnimation.skeleton.SetBonesToSetupPose();
 		SkeletonAnimation.state.SetAnimation(WeaponPostfix("attack"), false);
 		Walking = false;
+	}
+	
+	public void Die() {
+		SkeletonAnimation.skeleton.SetBonesToSetupPose();
+		SkeletonAnimation.state.SetAnimation("death", false);
+		Walking = false;
+		Dieing = true;
 	}
 	
 	protected string WeaponPostfix(string str) {
